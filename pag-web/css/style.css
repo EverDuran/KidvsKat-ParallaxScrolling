@@ -1,0 +1,184 @@
+/* PROPIEDADES GENERALES */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #fff; 
+    min-height: 100vh;
+    overflow-x: hidden; 
+    background: linear-gradient(0deg, rgba(207,224,255,1) 0%, rgba(130,127,209,1) 100%);
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 80px 30px 50px;
+    display: flex;
+    object-fit: cover;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2000;
+}
+
+header .logo{
+    width: 15vmax;
+    cursor: pointer;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    border-radius: 20px;
+    color: #110011;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    background: #DDCCDD;
+    color: #110011;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+section::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, #1C0522, transparent);
+    z-index: 10;
+}
+
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section #slogan{
+    position: absolute;
+    color: #110011;
+    font-size: 7vmax;
+    text-align: center;
+    font-family: 'Rancho', sans-serif;
+    line-height: 0.8em;
+    white-space: nowrap;
+    transform: translateY(-200px);
+    margin-left: 10vw;   
+}
+
+section #btn{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    background: #110011;
+    border-radius: 20px; 
+    transform: translateY(20px); 
+    transform: translateX(60px); 
+}
+section #btn:hover{
+    background: #3d003d;
+}
+
+.sec{
+    background: #1c0522;
+    position: relative;
+    padding: 80px;
+}
+
+.sec h2{
+    font-size: 3.5vw;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.sec h3{
+    font-size: 2vw;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.sec p{
+    font-size: 1.2em;
+    color: #fff;
+}
+
+/* AHORA HAREMOS EL RESPONSIVO */
+@media (max-width: 991px){
+    .sec{
+        padding: 60px;
+    }
+    .sec p{
+        font-size: 1em;
+    }
+    header .menulist{
+        opacity: 0;
+    }
+    nav ul{
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+    nav.active ul{
+        position: relative;
+        top: 50px;
+        margin-left: -150px;
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }    
+    header .menu{
+        position: absolute;
+        right: 40px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        background-image:  url('./../images/lista.svg');
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    header .menu.active{
+        background-image: url('./../images/close.svg');
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
